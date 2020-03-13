@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS dependencies -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    type="text/css">
+  <link rel="stylesheet" href="aquamarine.css">
+  <!-- Script: Make my navbar transparent when the document is scrolled to top -->
+  <script src="js/navbar-ontop.js"></script>
+  <!-- Script: Animated entrance -->
+  <script src="js/animate-in.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="https://blog.renaltracker.com/wp-content/uploads/2019/05/White_logo.png" alt="logo"
+        style="width:200px;height: 30px;margin:20px 40px">
+    </a>
+
+  </nav>
+  <!-- Cover -->
+  <div class="pt-5 bg-primary text-center">
+    <br>
+    <br>
+    <br>
+    <h1 class="h11">Kidney Failure Risk Calculation</h1>
+    <h5>Increasing end stage kidney disease risk awareness</h5>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+
+  <div class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 p-3">
+          <form
+            oninput="x.value=parseInt(a.value/10 - 7.036) + 0.2467 * (sex.value - 0.5642)- 0.5567 * parseInt(b.value/5 - 7.222) + 0.4510 * (Math.log(c.value)-5.137)">
+            <!-- #NAME -->
+            <div class="form-group mb-1"> <input type="name" name="name" class="form-control"
+                placeholder="Enter name (Optional)"> </div> <small id="emailHelp" class="form-text text-muted">We'll
+              never share your name with anyone else.</small>
+            <!-- #GENDER -->
+            <div class="form-group my-2">
+              <select id="sex" class="form-control" placeholder="Select Gender">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+              </select></div>
+            <!-- #AGE -->
+            <div class="form-group mb-2">
+              <div class="form-group">
+                <input type="number" id="a" value="0" class="form-control" placeholder="Enter your Age">
+              </div>
+            </div>
+            <!-- #EGFR -->
+            <div class="input-group mb-2">
+              <input type="number" id="b" value="0" class="form-control" name="email" placeholder="Enter eGFR">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon2">Mg/m</span>
+              </div>
+            </div>
+            <!-- #ACR -->
+            <div class="input-group mb-2">
+              <input type="number" id="c" value="0" class="form-control" name="email" placeholder="Enter Urine Albumin Creatinine Ratio">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon2">Mg/m</span>
+              </div>
+            </div>
+            <!-- #REGION -->
+            <div class="mb-1">Select Region</div>
+            <div class="form-group mb-1">
+              <select class="form-control">
+                <option >USA</option>
+                <option >EU</option>
+                </option>
+              </select>
+            </div>
+            <br>
+            <div>
+              <button type="submit" class="btn btn-primary my-2">View Result</button>
+              <div><output name="x" for="a b"></output></div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6 p-2 text-md-left text-center">
+        <h3>About this tool</h3>
+        <p class="my-4 text-muted">The kidney failure risk equations were developed in patients with CKD stages G3-G5
+          referred to nephrologists in Canada, and have now been validated in more than 700,000 individuals spanning 30
+          + countries worldwide. <br><br> The four and eight variable equations accurately predict the 2 and 5 year
+          probability of treated kidney failure (dialysis or transplantation) for a potential patient with CKD Stage 3
+          to 5. Predicted risks may differ from observed risks in clinical populations with lower and higher observed
+          risks than the study population, and a calibration factor for non-North American cohorts has been added.Â
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+  <!-- Footer -->
+  <div class="pt-5 bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <p class="lead">Contact us</p>
+          <p class="lead">We're happy to answer your support questions between 8am to 6pm EST.</p>
+          <p class="lead">support@renaltracker.com</p>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-12 my-3 text-center">
+          <p class="text-muted">© Copyright 2020 RenalTracker - All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- JavaScript dependencies -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <!-- Script: Smooth scrolling between anchors in the same page -->
+  <script src="js/smooth-scroll.js"></script>
+</body>
+
+</html>
