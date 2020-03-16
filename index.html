@@ -45,8 +45,16 @@
       </div>
       <div class="row">
         <div class="col-md-6 p-3">
-          <form
-            oninput="x.value=parseInt(a.value/10 - 7.036) + 0.2467 * (sex.value - 0.5642)- 0.5567 * parseInt(b.value/5 - 7.222) + 0.4510 * (Math.log(c.value)-5.137)">
+          <form oninput="
+            LPUSA2.value=parseInt(a.value/10 - 7.036) + 0.2467 * (sex.value - 0.5642)- 0.5567 * parseInt(b.value/5 - 7.222) + 0.4510 * (Math.log(c.value)-5.137),
+            usa2.value=parseInt(1 - 0.9750^LPUSA2*100),
+            LPEU2.value=parseInt(a.value/10 - 7.036) + 0.2467 * (sex.value - 0.5642)- 0.5567 * parseInt(b.value/5 - 7.222) + 0.4510 * (Math.log(c.value)-5.137),
+            eu2.value=parseInt(1 - 0.9832^LPEU2*100),
+
+            LPUSA5.value=parseInt(a.value/10 - 7.036) + 0.2467 * (sex.value - 0.5642)- 0.5567 * parseInt(b.value/5 - 7.222) + 0.4510 * (Math.log(c.value)-5.137),
+            usa5.value=parseInt(1 - 0.9240^LPUSA5*100),
+            LPEU5.value=parseInt(a.value/10 - 7.036) + 0.2467 * (sex.value - 0.5642)- 0.5567 * parseInt(b.value/5 - 7.222) + 0.4510 * (Math.log(c.value)-5.137),
+            eu5.value=parseInt(1 - 0.9365^LPEU5*100)">
             <!-- #NAME -->
             <div class="form-group mb-1"> <input type="name" name="name" class="form-control"
                 placeholder="Enter name (Optional)"> </div> <small id="emailHelp" class="form-text text-muted">We'll
@@ -72,7 +80,8 @@
             </div>
             <!-- #ACR -->
             <div class="input-group mb-2">
-              <input type="number" id="c" value="0" class="form-control" name="email" placeholder="Enter Urine Albumin Creatinine Ratio">
+              <input type="number" id="c" value="0" class="form-control" name="email"
+                placeholder="Enter Urine Albumin Creatinine Ratio">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon2">Mg/g</span>
               </div>
@@ -80,16 +89,50 @@
             <!-- #REGION -->
             <div class="mb-1">Select Region</div>
             <div class="form-group mb-1">
-              <select class="form-control">
-                <option >USA</option>
-                <option >EU</option>
+              <select id="region" class="form-control">
+                <option value="0">USA</option>
+                <option value="1">EU</option>
                 </option>
               </select>
             </div>
             <br>
             <div>
               <button type="submit" class="btn btn-primary my-2">View Result</button>
-              <div><output name="x" for="a b"></output></div>
+              <a href="#" id="a()" class="btn btn-primary my-2">View Result</a>
+              <!-- <div><output name="x"></output></div> -->
+
+              <div class="p-1 container">
+                <h3>Result</h3>
+                <table class="table table-hover table-striped table-bordered">
+                  <thead class="thead-inverse">
+                    <tr>
+                      <th scope="col">Prediction Horizon</th>
+                      <th scope="col">USA</th>
+                      <th scope="col">EU</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">2 Years</th>
+                      <td>
+                        <div><output name="LPUSA2"></output>%</div>
+                      </td>
+                      <td >
+                        <div><output name="LPEU2"></output>%</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5 Years</th>
+                      <td>
+                        <div><output name="LPUSA5"></output>%</div>
+                      </td>
+                      <td>
+                        <div><output name="LPEU5"></output>%</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
           </form>
         </div>
       </div>
@@ -105,9 +148,6 @@
     </div>
   </div>
   </div>
-
-
-
 
   <!-- Footer -->
   <div class="pt-5 bg-dark">
